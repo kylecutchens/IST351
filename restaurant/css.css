@@ -1,0 +1,15 @@
+.a{
+	visibility: visible;	
+}
+
+.b{
+	visibility: hidden;
+}
+
+.img{
+	position: relative;
+}
+
+.platter{
+	position: absolute
+}

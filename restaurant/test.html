@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kyle Cutchens Restaurant Project</title>
+</head>
+<body>
+
+<div>
+<h1>Online Restaurant</h1>
+<p>It's just like food, but virtual.</p>
+</div>
+
+<div>
+<script type="text/javascript" src = "script.js"></script>
+<link rel="stylesheet" href="css.css">
+
+<div id = "menu" class= "a">
+
+<script>
+
+writeMenu();
+
+document.write("<button id = \"button1\"> Submit Order </button>");
+
+
+</script>
+
+</div>
+
+
+<div id="plate" class = "b">
+
+<img src = "images/Spoon.gif">
+<img class = "platter" src = "images/Platter.jpg">
+<img src = "images/Fork.gif">
+<img src = "images/Knife.gif">
+
+</div>
+
+
+
+
+
+<div id = "demo">
+
+<script>
+
+var f;
+var h = 1;
+
+document.getElementById('button1').onclick = function()
+{
+	
+	document.getElementById("plate").style.visibility= "visible";
+	document.getElementById("menu").style.visibility= "hidden";
+
+	for (f = 0; f < ItemName.length; f++)
+	{
+	
+		if (document.getElementById(f).checked)
+		{
+			
+			document.getElementById("plate").innerHTML+=(" <img class = \"img\" src = \"images/" + ItemPic[f] + "\">");
+		
+		}
+		
+		if (h%3 == 0)
+		{
+			document.getElementById("plate").innerHTML+=("<br>");
+		}
+		
+		h++;
+	}
+	
+	
+}
+
+</script>
+
+
+
+
+</div>
+</body>
+</html>
