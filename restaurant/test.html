@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head >
 <title>Kyle Cutchens Restaurant Project</title>
 </head>
 <body>
 
-<div>
+<div id = "title" class = "title">
 <h1>Online Restaurant</h1>
-<p>It's just like food, but virtual.</p>
+<p>It's just like regular food, but virtual.</p>
 </div>
 
 <div>
@@ -28,12 +28,27 @@ document.write("<button id = \"button1\"> Submit Order </button>");
 </div>
 
 
-<div id="plate" class = "b">
+<div class = "b">
 
-<img src = "images/Spoon.gif">
-<img class = "platter" src = "images/Platter.jpg">
-<img src = "images/Fork.gif">
-<img src = "images/Knife.gif">
+
+
+<div id="plate" >
+
+	<img src = "images/Restaurant Images/Knife.gif">
+	<img src = "images/Restaurant Images/Fork.gif">
+	<img src = "images/Restaurant Images/Spoon.gif">
+	<img src = "images/Restaurant Images/CoffeeCup.gif">
+	<img class = "platter" src = "images/Restaurant Images/Platter.jpg">
+
+
+</div>
+
+</div>
+
+<div id = "bill" class = "right">
+
+<b> Bill </b>
+
 
 </div>
 
@@ -45,7 +60,7 @@ document.write("<button id = \"button1\"> Submit Order </button>");
 
 <script>
 
-var f;
+var f, i;
 var h = 1;
 
 document.getElementById('button1').onclick = function()
@@ -53,6 +68,8 @@ document.getElementById('button1').onclick = function()
 	
 	document.getElementById("plate").style.visibility= "visible";
 	document.getElementById("menu").style.visibility= "hidden";
+	document.getElementById("bill").style.visibility= "visible";
+	document.getElementById("title").style.visibility= "hidden";	
 
 	for (f = 0; f < ItemName.length; f++)
 	{
@@ -60,20 +77,45 @@ document.getElementById('button1').onclick = function()
 		if (document.getElementById(f).checked)
 		{
 			
-			document.getElementById("plate").innerHTML+=(" <img class = \"img\" src = \"images/" + ItemPic[f] + "\">");
+			document.getElementById("plate").innerHTML+=(" <img class = \"img\" src = \"images/Restaurant Images/" + ItemPic[f] + "\">");
 		
 		}
 		
-		if (h%3 == 0)
-		{
-			document.getElementById("plate").innerHTML+=("<br>");
-		}
-		
-		h++;
 	}
-	
-	
+
+	writeBill();
 }
+
+var total = 0;
+
+function writeBill()
+	{
+	
+		for (i = 0; i < ItemName.length; i++)
+		{
+			if(document.getElementById(i).checked)
+			{
+				document.getElementById("bill").innerHTML+=("<p>" + ItemName[i] + "......" + ItemPrice[i] + "</p>");
+				total = total + ItemPrice[i]
+			}
+		
+		}
+		
+		var tax =(total * .07)
+		var tip = (total * .15)
+		
+		
+		total = total + tax + tip
+
+
+		document.getElementById("bill").innerHTML+=("<b> Tax : " + tax.toFixed(2) + " </b><br>");
+		
+		document.getElementById("bill").innerHTML+=("<b> Tip : " + tip.toFixed(2) + " </b><br>");
+		
+		document.getElementById("bill").innerHTML+=("<b> Total : " + total.toFixed(2) + " </b><br>");
+
+	}
+
 
 </script>
 

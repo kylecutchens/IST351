@@ -48,16 +48,5 @@ function writeMenu()
 }
 
 
-function writeDinner()
-{
-	for(i = 0; i < ItemName.length; i++)
-	{
-		
 
-		
-	}
-	
-	
-	
-}
 

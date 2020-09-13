@@ -1,5 +1,6 @@
 .a{
-	visibility: visible;	
+	visibility: visible;
+	background : url("images/paper.jpg");	
 }
 
 .b{
@@ -13,3 +14,24 @@
 .platter{
 	position: absolute
 }
+
+.right{
+		float : right;
+		background : url("images/paper.jpg");
+		position : relative;
+		visibility : hidden;
+}
+
+.left{
+	
+	float : left;
+	
+}
+
+.title{
+	visibility : visible;
+	text-align: center;
+	text-decoration: underline;
+	background : beige
+}
+
